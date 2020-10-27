@@ -9,14 +9,24 @@ const assertEqual = function(actual, expected) {
 
 const tail = arr => {
   let tailArr = [];
-  for (let i = 1; i < arr.length; i++){
+  for (let i = 1; i < arr.length; i++) {
     tailArr.push(arr[i]);
   }
   return tailArr;
 };
 
 //Test Code
-assertEqual([1, 2, 3], [1, 2, 3]);
-assertEqual('Scruffy!', 'Scruffy!');
-assertEqual(1, 1);
-assertEqual(1, 2);
+const result = tail(["Hello", "Lighthouse", "Labs"]);
+assertEqual(result.length, 2);
+assertEqual(result[0], "Lighthouse");
+assertEqual(result[1], "Labs");
+
+const words = ["Yo Yo", "Lighthouse", "Labs"];
+tail(words);
+assertEqual(words.length, 3);
+
+const oneWord = ["Scruffy!"];
+assertEqual(tail(oneWord).length, 0);
+
+const noWords = [];
+assertEqual(tail(noWords).length, 0);
