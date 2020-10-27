@@ -5,11 +5,7 @@ let emoji = require('node-emoji');
 
 const assertEqual = function(actual, expected) {
   const isEqual = actual === expected;
-  let str = isEqual ? emoji.emojify(':100::100::100:Assertion ') : emoji.emojify(':poop::poop::poop:Assertion ');
-  str += isEqual ? 'Passed: ' : 'Failed: ';
-  str += (typeof actual === 'string') ? `"${actual}"` : actual;
-  str += isEqual ? ' === ' : ' !== ';
-  str += (typeof expected === 'string') ? `"${expected}"` : expected;
+  let str = `${isEqual ? emoji.emojify(':100::100::100:Assertion') : emoji.emojify(':poop::poop::poop:Assertion')} ${isEqual ? 'Passed:' : 'Failed:'} ${(typeof actual === 'string') ? `"${actual}"` : actual} ${isEqual ? '===' : '!=='} ${(typeof expected === 'string') ? `"${expected}"` : expected}`;
   console.log(str);
 };
 
