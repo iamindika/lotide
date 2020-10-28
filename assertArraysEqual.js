@@ -21,7 +21,7 @@ const eqArrays = (arr1, arr2) => {
   return false;
 };
 
-const assertArrayEqual = (arr1, arr2) => {
+const assertArraysEqual = (arr1, arr2) => {
   if (eqArrays(arr1, arr2)) {
     console.log(emoji.emojify(`:100::100::100:Assertion Passed: ${arr1} === ${arr2}`));
   } else {
@@ -29,9 +29,9 @@ const assertArrayEqual = (arr1, arr2) => {
   }
 };
 //Test Code
-assertArrayEqual([1, 2, 3], [1, 2, 3]);
-assertArrayEqual([1, 2], [1, 2, 3]);
-assertArrayEqual([1, 2, 3], [1, 2, 4]);
-assertArrayEqual([], [1]);
-assertArrayEqual([], []);
+assertArraysEqual([1, 2, 3], [1, 2, 3]);
+assertArraysEqual([1, 2], [1, 2, 3]);
+assertArraysEqual([1, 2, 3], [1, 2, 4]);
+assertArraysEqual([], [1]);
+assertArraysEqual([], []);
 
