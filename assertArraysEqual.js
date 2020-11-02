@@ -9,29 +9,16 @@ let emoji = require('node-emoji');
 //   console.log(str);
 // };
 
-const eqArrays = (arr1, arr2) => {
-  if (arr1.length === arr2.length) {
-    for (let i = 0; i < arr1.length; i++) {
-      if (arr1[i] !== arr2[i]) {
-        return false;
-      }
-    }
-    return true;
-  }
-  return false;
-};
+const eqArrays = require('./eqArrays');
 
 const assertArraysEqual = (arr1, arr2) => {
   if (eqArrays(arr1, arr2)) {
     console.log(emoji.emojify(`:100::100::100:Assertion Passed: ${arr1} === ${arr2}`));
   } else {
-    console.log(emoji.emojify(`:poop::poop::poop:Assertion Failed: ${arr1} === ${arr2}`));
+    console.log(emoji.emojify(`:poop::poop::poop:Assertion Failed: ${arr1} !== ${arr2}`));
   }
 };
-//Test Code
-assertArraysEqual([1, 2, 3], [1, 2, 3]);
-assertArraysEqual([1, 2], [1, 2, 3]);
-assertArraysEqual([1, 2, 3], [1, 2, 4]);
-assertArraysEqual([], [1]);
-assertArraysEqual([], []);
+
+module.exports = assertArraysEqual;
+
 
