@@ -17,22 +17,22 @@ const without = require('./without');
 
 
 module.exports = {
-  assertArraysEqual: assertArraysEqual,
-  assertEqual: assertEqual,
-  assertObjectsEqual: assertObjectsEqual,
-  countLetters: countLetters,
-  countOnly: countOnly,
-  eqArrays: eqArrays,
-  eqObjects: eqObjects,
-  findKey: findKey,
-  findKeyByValue: findKeyByValue,
-  flatten: flatten,
-  head: head,
-  letterPositions: letterPositions,
-  tail: tail,
-  takeUntil: takeUntil,
-  middle: middle,
-  without: without
+  assertArraysEqual,
+  assertEqual,
+  assertObjectsEqual,
+  countLetters,
+  countOnly,
+  eqArrays,
+  eqObjects,
+  findKey,
+  findKeyByValue,
+  flatten,
+  head,
+  letterPositions,
+  tail,
+  takeUntil,
+  middle,
+  without
 };
 
 //still need to complete two lotide components found on week 1 day 5: Recursive eqObjects, Recursive eqArrays. Blue variables still need to be exported.
