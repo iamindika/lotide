@@ -1,38 +1,18 @@
-//Requires npm package node-emoji
-let emoji = require('node-emoji');
+const eqArrays = require('./eqArrays');
 
-const eqArrays = (arr1, arr2) => {
-  if (arr1.length === arr2.length) {
-    for (let i = 0; i < arr1.length; i++) {
-      if (arr1[i] !== arr2[i]) {
-        return false;
-      }
-    }
-    return true;
-  }
-  return false;
-};
-
-const assertArraysEqual = (arr1, arr2) => {
-  if (eqArrays(arr1, arr2)) {
-    console.log(emoji.emojify(`:100::100::100:Assertion Passed: ${arr1} === ${arr2}`));
-  } else {
-    console.log(emoji.emojify(`:poop::poop::poop:Assertion Failed: ${arr1} === ${arr2}`));
-  }
-};
+const assertArraysEqual = require('./assertArraysEqual');
 
 const without = (source, itemsToRemove) => {
-  let newArr = [];
-  let isToBeRemoved;
+  const newArr = [];
   for (let i = 0; i < source.length; i++) {
-    isToBeRemoved = false;
-    for (let j = 0; j < itemsToRemove.length && !isToBeRemoved; j++) {
+    for (let j = 0; j < itemsToRemove.length; j++) {
       if (source[i] === itemsToRemove[j]) {
-        isToBeRemoved = true;
+          break;
       }
-    }
-    if (!isToBeRemoved) {
-      newArr.push(source[i]);
+
+      if (j === (itemsToRemove.length - 1)) {
+        newArr.push(source[i])
+      }
     }
   }
   return newArr;
