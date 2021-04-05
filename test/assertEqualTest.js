@@ -18,3 +18,11 @@ describe('#assertEqual', function() {
     assert.strictEqual(assertEqual(1, 2), false);
   });
 });
+
+
+// Test Code
+
+// assertEqual('Lighthouse Labs', 'Juno');
+// assertEqual(1, 1);
+// assertEqual('1', 1);
+// assertEqual('Coding Rocks!', 'Coding Rocks!');
